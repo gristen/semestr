@@ -44,7 +44,6 @@ public class Unemployed {
     public void SetInf() throws IOException
         {
         FileWriter fw= new FileWriter("DBusers.txt",true);
-        fw.write( "ID пользователя: "+this.idHuman + "\n");
         fw.write( "Имя: "+this.name + "\n");
         fw.write("Профессия: "+this.profession+ "\n");
         fw.write("образование: "+this.education+ "\n");

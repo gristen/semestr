@@ -1,4 +1,3 @@
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -27,12 +26,12 @@ public class Menu {
             if (Unemployed.nameCorrect(unemployed.getName())) break;
             else System.out.println("Фамилию и инициалы нужно вводить так: А.С.Пушкин");
         } while (true);
-         do {
+        do {
             System.out.println("Введите профессию: ");
             unemployed.setProfession(scanner.nextLine());
             if (Unemployed.textCorrect(unemployed.getProfession())) break;
             else System.out.println("Профессия должна содержать только кирилицу и начинаться с заглавной буквы!");
-       } while (true);
+        } while (true);
         do {
             System.out.println("Введите образование безработного: ");
             unemployed.setEducation(scanner.nextLine());
@@ -43,9 +42,9 @@ public class Menu {
         do {
             System.out.println("Введите причину увольнения: ");
             unemployed.setDismissalCause(scanner.nextLine());
-           if (Unemployed.textCorrect(unemployed.getDismissalCause())) break;
+            if (Unemployed.textCorrect(unemployed.getDismissalCause())) break;
             else System.out.println("Причина увольнения должна содержать только кирилицу и начинаться с заглавной буквы!");
-       } while (true);
+        } while (true);
         do {
             System.out.println("Введите семейное положение безработного: ");
             unemployed.setMaritalStatus(scanner.nextLine());
@@ -101,20 +100,20 @@ public class Menu {
             chars.add(scan.nextLine());
 
         }
-       for (String arr:chars)
-       {
-if (arr.equals(textSearch)) {
-    int y = i;
-    for (int x = 0; x < 10; x++) {
+        for (String arr:chars)
+        {
+            if (arr.equals(textSearch)) {
+                int y = i;
+                for (int x = 0; x < 10; x++) {
 
-        System.out.println(chars.get(y++));
+                    System.out.println(chars.get(y++));
 
 
-    }
-    System.out.println("");
-}
-           i++;
-       }
+                }
+                System.out.println("");
+            }
+            i++;
+        }
         fr.close();
 
 
@@ -123,6 +122,3 @@ if (arr.equals(textSearch)) {
 
 
 }
-
-
-
