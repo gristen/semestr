@@ -113,6 +113,13 @@ public class Menu {
                 switch (slovo)
                 {
                     case "Профессия" :  test = 9;   y--; break;
+                    case "образование" :  test = 9;   y -= 2; break;
+                    case "последнее рабочее место" :  test = 9;   y -= 3; break;
+                    case "Причина увольнения" :  test = 9;  y -= 4; break;
+                    case "семейный статус" :  test = 9;   y -= 5; break;
+                    case "Жилье" :  test = 9;  y -= 6; break;
+                    case "Контакты" :  test = 9;   y -= 7; break;
+                    case "требования" :  test = 9;   y--; break;
                 }
 
 
