@@ -102,9 +102,21 @@ public class Menu {
         }
         for (String arr:chars)
         {
+
             if (arr.equals(textSearch)) {
+
                 int y = i;
-                for (int x = 0; x < 10; x++) {
+                int test =0;
+                String slovo;
+              slovo=textSearch.substring(0,textSearch.indexOf(":"));
+
+                switch (slovo)
+                {
+                    case "Профессия" :  test = 9;   y--; break;
+                }
+
+
+                for (int x = 0; x < test; x++) {
 
                     System.out.println(chars.get(y++));
 
