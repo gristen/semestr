@@ -94,6 +94,7 @@ public class Menu {
         String textSearch = "";
         textSearch = scanner.nextLine();
         int i = 0;
+        int sov=0;
         while (scan.hasNextLine())
         {
 
@@ -104,24 +105,60 @@ public class Menu {
         {
 
             if (arr.equals(textSearch)) {
-
+                sov++;
                 int y = i;
                 int test =0;
                 String slovo;
-              slovo=textSearch.substring(0,textSearch.indexOf(":"));
-
-                switch (slovo)
+                if (sov>1)
                 {
-                    case "Профессия" :  test = 9;   y--; break;
+                    System.out.println("пользвателей несколько");
+                    slovo=textSearch.substring(0,textSearch.indexOf(":"));
+                    switch (slovo)
+                    {
+                        case "Профессия" :  test = 9;   y--; break;
+                        case "образование" :  test = 9;   y -= 2; break;
+                        case "последнее рабочее место" :  test = 9;   y -= 3; break;
+                        case "Причина увольнения" :  test = 9;  y -= 4; break;
+                        case "семейный статус" :  test = 9;   y -= 5; break;
+                        case "Жилье" :  test = 9;  y -= 6; break;
+                        case "Контакты" :  test = 9;   y -= 7; break;
+                        case "требования" :  test = 9;   y--; break;
+                    }
+
+
+                    for (int x = 0; x < 10; x++) {
+
+                        System.out.println(chars.get(y++));
+
+
+                    }
+                }
+                else
+                {
+                    System.out.println("1");
+                    slovo=textSearch.substring(0,textSearch.indexOf(":"));
+
+                    switch (slovo)
+                    {
+                        case "Профессия" :  test = 9;   y--; break;
+                        case "образование" :  test = 9;   y -= 2; break;
+                        case "последнее рабочее место" :  test = 9;   y -= 3; break;
+                        case "Причина увольнения" :  test = 9;  y -= 4; break;
+                        case "семейный статус" :  test = 9;   y -= 5; break;
+                        case "Жилье" :  test = 9;  y -= 6; break;
+                        case "Контакты" :  test = 9;   y -= 7; break;
+                        case "требования" :  test = 9;   y--; break;
+                    }
+
+
+                    for (int x = 0; x < 10; x++) {
+
+                        System.out.println(chars.get(y++));
+
+
+                    }
                 }
 
-
-                for (int x = 0; x < test; x++) {
-
-                    System.out.println(chars.get(y++));
-
-
-                }
                 System.out.println("");
             }
             i++;
