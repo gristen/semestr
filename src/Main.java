@@ -22,7 +22,7 @@ public class Main {
                  Menu.PrintUnempl(); // complited
                     break;
                 case ("3"):
-                    System.out.println("3");/*Menu.removeMenu(base)*/
+                    Menu.deleteUser();
                     break;
                 case ("4"):
                    Menu.serchUser();//compl

@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ public class Menu {
                 "5 - Закрыть программу\n");
     }
 
-    public static Unemployed addMenu() throws IOException {
+    public static void addMenu() throws IOException {
 
 
         Unemployed unemployed = new Unemployed();
@@ -35,13 +34,18 @@ public class Menu {
         do {
             System.out.println("Введите образование безработного: ");
             unemployed.setEducation(scanner.nextLine());
-            break;
-//            if (Unemployed.specialCorrect(unemployed.getEducation())) break;
-//            else System.out.println("Образование должно содержать только кирилицу, знаки препинания, пробелы и начинаться с заглавной буквы!");
+            if (Unemployed.textCorrect(unemployed.getEducation())) break;
+            else System.out.println("Образование должно содержать только кирилицу и начинаться с заглавной буквы!");
         } while (true);
         do {
             System.out.println("Введите причину увольнения: ");
             unemployed.setDismissalCause(scanner.nextLine());
+            if (Unemployed.textCorrect(unemployed.getDismissalCause())) break;
+            else System.out.println("Причина увольнения должна содержать только кирилицу и начинаться с заглавной буквы!");
+        } while (true);
+        do {
+            System.out.println("последнее рабочее место: ");
+            unemployed.setLastWorkPlace(scanner.nextLine());
             if (Unemployed.textCorrect(unemployed.getDismissalCause())) break;
             else System.out.println("Причина увольнения должна содержать только кирилицу и начинаться с заглавной буквы!");
         } while (true);
@@ -52,25 +56,20 @@ public class Menu {
             else System.out.println("Семейное положение должно содержать только кирилицу и начинаться с заглавной буквы!");
         } while (true);
         do {
-            System.out.println("Введите причину увольнения безработного: ");
-            unemployed.setLastWorkPlace(scanner.nextLine());
-            System.out.println("Housing: ");
+            System.out.println("Жилье: ");
             unemployed.setHousingCond(scanner.nextLine());
-            break;
-//            if (Unemployed.specialCorrect(unemployed.getHousingCond())) break;
-//            else System.out.println("Жилищные условия должны содержать только кирилицу, знаки препинания, пробелы и начинаться с заглавной буквы!");
+            if (Unemployed.textCorrect(unemployed.getHousingCond())) break;
+            else System.out.println("Жилищные условия должны содержать только кирилицу и начинаться с заглавной буквы!");
         } while (true);
         do {
-            System.out.println("Введите жилищные условия безработного: ");
+            System.out.println("Контакты: ");
             unemployed.setContacts(scanner.nextLine());
-            break;
-//           if (Unemployed.contactCorrect(unemployed.getContacts())) break;
-//            else System.out.println("Жилищные условия должны быть написаны вот так: (Адрес проживания: Ул.Пушкина; Телефон: 88005553535)");
+           if (Unemployed.contactCorrect(unemployed.getContacts()))break;
+            else System.out.println("Жилищные условия должны быть написаны вот так: (Адрес проживания: Ул.Пушкина; Телефон: 88005553535)");
         } while (true);
         System.out.println("Введите требования безработного к будущей работе: ");
         unemployed.setRequirements(scanner.nextLine());
         unemployed.SetInf();
-        return unemployed;
 
 
     }
@@ -162,6 +161,20 @@ public class Menu {
                 System.out.println("");
             }
             i++;
+        }
+        fr.close();
+
+
+    }
+
+    public static void deleteUser() throws IOException {
+        FileReader fr= new FileReader("DBusers.txt");
+        ArrayList<String> test = new ArrayList<>();
+        Scanner scan=new Scanner(fr);
+
+        while (scan.hasNextLine())
+        {
+
         }
         fr.close();
 

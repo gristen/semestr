@@ -20,13 +20,13 @@ public class Unemployed {
     private static int counter;
 
 
-    public static boolean textCorrect(String text){return text.matches("[А-Я][а-я]{2,15}");}
+    public static boolean textCorrect(String text){return text.matches("[А-я]{2,15}");}
     public static boolean nameCorrect(String nameText){return nameText.matches("[А-Я].[А-Я].[А-Я ].+");}
     public static boolean specialCorrect(String special){
         return special.matches("[А-Я][а-я.,\s],{2,25}");
     }
     public static boolean contactCorrect(String contactsText){
-        return contactsText.matches("[А-Я][а-я.\s:;],{2,30}");
+        return contactsText.matches("[А-я :.;0-9]{2,30}");
     }
 
     public Unemployed (String name, String profession, String education, String lastWorkPlace, String dismissalCause, String maritalStatus, String housingCond, String contacts, String requirements) {
@@ -46,7 +46,7 @@ public class Unemployed {
         FileWriter fw= new FileWriter("DBusers.txt",true);
         fw.write( "Имя: "+this.name + "\n");
         fw.write("Профессия: "+this.profession+ "\n");
-        fw.write("образование: "+this.education+ "\n");
+        fw.write("Образование: "+this.education+ "\n");
         fw.write("последнее рабочее место: "+this.lastWorkPlace+ "\n");
         fw.write("Причина увольнения: "+this.dismissalCause+ "\n");
         fw.write("семейный статус: "+this.maritalStatus+ "\n");
