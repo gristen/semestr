@@ -61,12 +61,12 @@ public class Menu {
             if (Unemployed.textCorrect(unemployed.getHousingCond())) break;
             else System.out.println("Жилищные условия должны содержать только кирилицу и начинаться с заглавной буквы!");
         } while (true);
-        /*do {
-            System.out.println("Контакты: ");
+        do {
+            System.out.println("введите номер телефона: ");
             unemployed.setContacts(scanner.nextLine());
            if (Unemployed.contactCorrect(unemployed.getContacts()))break;
-            else System.out.println("Жилищные условия должны быть написаны вот так: (Адрес проживания: Ул.Пушкина; Телефон: 88005553535)");
-        } while (true);*/
+            else System.out.println();
+        } while (true);
         System.out.println("Введите требования безработного к будущей работе: ");
         unemployed.setRequirements(scanner.nextLine());
         unemployed.SetInf();

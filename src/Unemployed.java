@@ -26,7 +26,7 @@ public class Unemployed {
         return special.matches("[А-Я][а-я.,\s],{2,25}");
     }
     public static boolean contactCorrect(String contactsText){
-        return contactsText.matches("[А-я :.;0-9]{2,30}");
+        return contactsText.matches("[+]\\d{11}");
     }
 
     public Unemployed (String name, String profession, String education, String lastWorkPlace, String dismissalCause, String maritalStatus, String housingCond, String contacts, String requirements) {
@@ -37,7 +37,7 @@ public class Unemployed {
         this.dismissalCause=dismissalCause;
         this.maritalStatus=maritalStatus;
         this.housingCond=housingCond;
-       // this.contacts=contacts;
+        this.contacts=contacts;
         this.requirements=requirements;
         this.idHuman = counter++;
     }
@@ -51,7 +51,7 @@ public class Unemployed {
         fw.write("Причина увольнения: "+this.dismissalCause+ "\n");
         fw.write("семейный статус: "+this.maritalStatus+ "\n");
         fw.write("Жилье: "+this.housingCond+ "\n");
-      //  fw.write("Контакты: "+this.contacts+ "\n");
+        fw.write("Контакты: "+this.contacts+ "\n");
         fw.write("требования: "+this.requirements+ "\n");
         fw.write("---------------------------------------------\n");
 
