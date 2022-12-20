@@ -1,8 +1,5 @@
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Unemployed {
     private String name;
@@ -22,9 +19,7 @@ public class Unemployed {
 
     public static boolean textCorrect(String text){return text.matches("[А-я]{2,15}");}
     public static boolean nameCorrect(String nameText){return nameText.matches("[А-Я].[А-Я].[А-Я ].+");}
-    public static boolean specialCorrect(String special){
-        return special.matches("[А-Я][а-я.,\s],{2,25}");
-    }
+
     public static boolean contactCorrect(String contactsText){
         return contactsText.matches("[+]\\d{11}");
     }
@@ -39,7 +34,7 @@ public class Unemployed {
         this.housingCond=housingCond;
         this.contacts=contacts;
         this.requirements=requirements;
-        this.idHuman = counter++;
+
     }
     public void SetInf() throws IOException
         {
@@ -53,7 +48,7 @@ public class Unemployed {
         fw.write("Жилье: "+this.housingCond+ "\n");
         fw.write("Контакты: "+this.contacts+ "\n");
         fw.write("требования: "+this.requirements+ "\n");
-        fw.write("---------------------------------------------\n");
+        fw.write("");
 
         fw.close();
     }
