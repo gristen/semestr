@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws Exception {
         ArrayList<Unemployed> users = new ArrayList<>();
+        String path = "DBusers.txt";
+        File fileuser = new File(path);
         Menu asd = new Menu();
         date(users);
 
@@ -24,7 +27,7 @@ public class Main {
                  Menu.PrintUnempl(); // complited
                     break;
                 case ("3"):
-                    asd.deleteUser(users);
+                    asd.deleteUser(users,fileuser);
                     break;
                 case ("4"):
                    Menu.serchUser();//compl
@@ -75,17 +78,18 @@ public class Main {
 
             }
 
-            if (i == 8){
+            if (i == 8)
+            {
                 users.add(new Unemployed(name, profession, education, lastWorkPlace, dismissalCause, maritalStatus, housingCond, contacts, requirements));
-
             }
-
             i++;
             fw.close();
         }
 
-
     }
+
+
+
 
 }
 

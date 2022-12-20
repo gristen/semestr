@@ -86,16 +86,15 @@ public class Unemployed {
 
     @Override
     public String toString() {
-        return
-                "ФИО = " + name + '\n' +
-                        "Профессия = " + profession + '\n' +
-                        "Образование = " + education + '\n' +
-                        "Последнее место работы и должность = " + lastWorkPlace + '\n' +
-                        "Причина увольнения = " + dismissalCause + '\n' +
-                        "Семейное положение = " + maritalStatus + '\n' +
-                        "Жилищные условия = " + housingCond + '\n' +
-                        "Контактные координаты = " + contacts + '\n' +
-                        "Требования к будущей работе =" + requirements + '\n';
+        return  name +"\n" +
+                profession+"\n" +
+                education+"\n" +
+                lastWorkPlace+"\n" +
+                dismissalCause+"\n"  +
+                maritalStatus+"\n" +
+                housingCond  +"\n"   +
+                contacts+"\n"+
+                requirements +"\n" ;
     }
 }
 

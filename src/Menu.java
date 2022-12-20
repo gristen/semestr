@@ -1,4 +1,6 @@
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -214,11 +216,31 @@ public class Menu {
 
 
 
-    public  void deleteUser(ArrayList<Unemployed>users){
-       for (Unemployed arr : users)
-       {
-           System.out.println(arr.toString());
-       }
+    public  void deleteUser(ArrayList<Unemployed>users, File fileuser) throws IOException {
+        FileWriter reuser = null;
+        Unemployed result = null;
+        System.out.println("Введите некую часть заказа, который вы хотите удалить (Имя, Номер, и т.д.): ");
+        String textSearch = "";
+        textSearch = scanner.nextLine();
+
+        for (Unemployed user : users) {
+            if (user.getName().equals(textSearch) ||
+                    user.getProfession().equals(textSearch) ||
+                    user.getContacts().equals(textSearch) ||
+                    user.getLastWorkPlace().equals(textSearch)) {
+                result = user;
+                System.out.println(user.toString());
+                users.remove(result);
+                reuser = new FileWriter(fileuser);
+                for (Unemployed usere : users) {
+                    reuser.write("\n" + usere.getName() + "\n" + usere.getProfession() + "\n" +
+                            usere.getEducation() + "\n" + usere.getLastWorkPlace() + "\n" +
+                            usere.getDismissalCause() + "\n" + usere.getMaritalStatus() + "\n"+ usere.getHousingCond() + "\n"+ usere.getContacts() + "\n"+ usere.getRequirements() + "\n");
+                    reuser.flush();
+                }
+                break;
+            }
+        }
 
 
     }
