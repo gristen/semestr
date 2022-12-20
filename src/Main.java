@@ -9,8 +9,6 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws Exception {
         ArrayList<Unemployed> users = new ArrayList<>();
-        String path = "DBusers.txt";
-        File fileuser = new File(path);
         Menu asd = new Menu();
         date(users);
 
@@ -27,7 +25,7 @@ public class Main {
                  Menu.PrintUnempl(); // complited
                     break;
                 case ("3"):
-                    asd.deleteUser(users,fileuser);
+                    asd.deleteUser(users);
                     break;
                 case ("4"):
                    Menu.serchUser();//compl

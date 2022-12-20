@@ -13,7 +13,7 @@ public class Menu {
         System.out.println("Выберите действие\n" +
                 "1 - Добавить безработного\n" +
                 "2 - Показать всех безработных\n" +
-                "3 - Удалить безработного(Не работает)\n" +
+                "3 - Удалить безработного\n" +
                 "4 - Поиск безработного\n" +
                 "5 - Закрыть программу\n");
     }
@@ -150,7 +150,7 @@ public class Menu {
                     }
 
 
-                    for (int x = 0; x < 8; x++) {
+                    for (int x = 0; x < 9; x++) {
 
                         System.out.println(chars.get(y++));
 
@@ -196,7 +196,7 @@ public class Menu {
                     }
 
 
-                    for (int x = 0; x < 8; x++) {
+                    for (int x = 0; x < 9; x++) {
 
                         System.out.println(chars.get(y++));
 
@@ -216,10 +216,10 @@ public class Menu {
 
 
 
-    public  void deleteUser(ArrayList<Unemployed>users, File fileuser) throws IOException {
+    public  void deleteUser(ArrayList<Unemployed>users) throws IOException {
         FileWriter reuser = null;
         Unemployed result = null;
-        System.out.println("Введите некую часть заказа, который вы хотите удалить (Имя, Номер, и т.д.): ");
+        System.out.println("Введите некую часть резюме безработного. Ввод должен выглядить -> Ключ: Параметр. Пример - Имя: Б.Б.Бас ");
         String textSearch = "";
         textSearch = scanner.nextLine();
 
@@ -231,7 +231,7 @@ public class Menu {
                 result = user;
                 System.out.println(user.toString());
                 users.remove(result);
-                reuser = new FileWriter(fileuser);
+                reuser =  new FileWriter("DBusers.txt");
                 for (Unemployed usere : users) {
                     reuser.write("\n" + usere.getName() + "\n" + usere.getProfession() + "\n" +
                             usere.getEducation() + "\n" + usere.getLastWorkPlace() + "\n" +

@@ -48,7 +48,7 @@ public class Unemployed {
         fw.write("Жилье: "+this.housingCond+ "\n");
         fw.write("Контакты: "+this.contacts+ "\n");
         fw.write("требования: "+this.requirements+ "\n");
-        fw.write("");
+        fw.write("\n");
 
         fw.close();
     }
