@@ -9,7 +9,7 @@ public class Menu {
         System.out.println("Выберите действие\n"+
                 "1 - Добавить безработного\n" +
                 "2 - Показать всех безработных\n"+
-                "3 - Удалить безработного\n"+
+                "3 - Удалить безработного(Не работает)\n"+
                 "4 - Поиск безработного\n"+
                 "5 - Закрыть программу\n");
     }
@@ -61,12 +61,12 @@ public class Menu {
             if (Unemployed.textCorrect(unemployed.getHousingCond())) break;
             else System.out.println("Жилищные условия должны содержать только кирилицу и начинаться с заглавной буквы!");
         } while (true);
-        do {
+        /*do {
             System.out.println("Контакты: ");
             unemployed.setContacts(scanner.nextLine());
            if (Unemployed.contactCorrect(unemployed.getContacts()))break;
             else System.out.println("Жилищные условия должны быть написаны вот так: (Адрес проживания: Ул.Пушкина; Телефон: 88005553535)");
-        } while (true);
+        } while (true);*/
         System.out.println("Введите требования безработного к будущей работе: ");
         unemployed.setRequirements(scanner.nextLine());
         unemployed.SetInf();
@@ -89,7 +89,7 @@ public class Menu {
         FileReader fr= new FileReader("DBusers.txt");
         ArrayList<String>chars = new ArrayList<>();
         Scanner scan = new Scanner(fr);
-        System.out.println("Введите некую часть резюме безработного, которого вы хотите удалить (ФИО, Профессия, и т.д.): ");
+        System.out.println("Введите некую часть резюме безработного. Ввод должен выглядить -> Ключ: Параметр. Пример - Профессия: Бугалтер ");
         String textSearch = "";
         textSearch = scanner.nextLine();
         int i = 0;
@@ -102,7 +102,6 @@ public class Menu {
         }
         for (String arr:chars)
         {
-
             if (arr.equals(textSearch)) {
                 sov++;
                 int y = i;
@@ -110,7 +109,6 @@ public class Menu {
                 String slovo;
                 if (sov>1)
                 {
-                    System.out.println("пользвателей несколько");
                     slovo=textSearch.substring(0,textSearch.indexOf(":"));
                     switch (slovo)
                     {
@@ -125,21 +123,22 @@ public class Menu {
                     }
 
 
-                    for (int x = 0; x < 10; x++) {
+                    for (int x = 0; x < 8; x++) {
 
                         System.out.println(chars.get(y++));
 
                     }
+                    System.out.println("");
                 }
                 else
                 {
-                    System.out.println("1");
+
                     slovo=textSearch.substring(0,textSearch.indexOf(":"));
 
                     switch (slovo)
                     {
                         case "Профессия" :  test = 9;   y--; break;
-                        case "образование" :  test = 9;   y -= 2; break;
+                        case "Образование" :  test = 9;   y -= 2; break;
                         case "последнее рабочее место" :  test = 9;   y -= 3; break;
                         case "Причина увольнения" :  test = 9;  y -= 4; break;
                         case "семейный статус" :  test = 9;   y -= 5; break;
@@ -149,15 +148,16 @@ public class Menu {
                     }
 
 
-                    for (int x = 0; x < 10; x++) {
+                    for (int x = 0; x < 8; x++) {
 
                         System.out.println(chars.get(y++));
 
 
                     }
+                    System.out.println("");
                 }
 
-                System.out.println("");
+
             }
             i++;
         }

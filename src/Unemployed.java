@@ -37,23 +37,23 @@ public class Unemployed {
         this.dismissalCause=dismissalCause;
         this.maritalStatus=maritalStatus;
         this.housingCond=housingCond;
-        this.contacts=contacts;
+       // this.contacts=contacts;
         this.requirements=requirements;
         this.idHuman = counter++;
     }
     public void SetInf() throws IOException
         {
         FileWriter fw= new FileWriter("DBusers.txt",true);
-        fw.write( "Имя: "+this.name + "\n");
+        fw.write("Имя: "+this.name + "\n");
         fw.write("Профессия: "+this.profession+ "\n");
         fw.write("Образование: "+this.education+ "\n");
         fw.write("последнее рабочее место: "+this.lastWorkPlace+ "\n");
         fw.write("Причина увольнения: "+this.dismissalCause+ "\n");
         fw.write("семейный статус: "+this.maritalStatus+ "\n");
         fw.write("Жилье: "+this.housingCond+ "\n");
-        fw.write("Контакты: "+this.contacts+ "\n");
+      //  fw.write("Контакты: "+this.contacts+ "\n");
         fw.write("требования: "+this.requirements+ "\n");
-        fw.write("--------------------------------------------- ");
+        fw.write("---------------------------------------------\n");
 
         fw.close();
     }
