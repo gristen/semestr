@@ -129,7 +129,6 @@ public class Menu {
 
                         System.out.println(chars.get(y++));
 
-
                     }
                 }
                 else
